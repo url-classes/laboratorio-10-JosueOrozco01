@@ -151,18 +151,14 @@ class RBTree {
         this.printInorder(this.root);
     }
     
-    public searchRecursivee(dataToSearch: number, node: NodeRBT): number {
+    public searchRecursivee(dataToSearch: number, node: NodeRBT = this.root): number {
         if (node === this.leaf) {
-            return -1;  
+            return -1;
         }
         if (node.getData() === dataToSearch) {
             return node.getData();  
         }
         return dataToSearch < node.getData() ? this.searchRecursivee( dataToSearch,node.getLeftChild()) : this.searchRecursivee( dataToSearch,node.getRightChild());
-    }
-    
-    public search(value): void {
-      this.searchRecursivee(value, this.root)
     }
     
     public insert(data: number): void {
@@ -201,6 +197,8 @@ class RBTree {
         // corregir inserción
         this.fixInsert(newNode);
     }
+    
+  
 }
 
 const myRBTree: RBTree = new RBTree();
@@ -213,4 +211,4 @@ myRBTree.insert(50);
 myRBTree.insert(45);
 myRBTree.printAll();
 console.log("")
-myRBTree.search(20)
+console.log(myRBTree.searchRecursivee(20, this.root))
