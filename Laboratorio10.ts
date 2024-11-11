@@ -211,4 +211,4 @@ myRBTree.insert(50);
 myRBTree.insert(45);
 myRBTree.printAll();
 console.log("")
-console.log(myRBTree.searchRecursivee(20, this.root))
+console.log(myRBTree.searchRecursivee(20))
